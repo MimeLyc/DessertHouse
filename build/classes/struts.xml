@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+
+	<package name="struts2" namespace="/DessertHouse" extends="struts-default">
+
+
+		<action name="login" class="LoginAction">
+
+			<result name="customer">/dessert/main_customer.jsp</result>
+			<result name="systemmanager">/dessert/main_systemManager.jsp</result>
+			<result name="centerManager">/dessert/main_centerManager.jsp</result>
+			<result name="manager">/dessert/main_Manager.jsp</result>
+			<result name="branchManager">/dessert/main_branchManager.jsp</result>
+			<result name="falt">/dessert/test2.jsp</result>
+
+		</action>
+		
+		<action name="register" class="RegisterAction">
+			<result name ="success">/dessert/main_customer.jsp</result>
+			<result name = "fail">/dessert/test2.jsp</result>
+		</action>
+	
+				<action name="changeInfo_customer" class="CusChangeInfoAction">
+			<result name ="success">/dessert/changeInfo_customer.jsp</result>
+		</action>
+		
+		<action name="statusDown_customer" class="CusStatusDownAction">
+			<result name ="success">/dessert/accountInfo_customer.jsp</result>
+		</action>
+		
+		<action name="statusValid_customer" class="CusStatusValidAction">
+			<result name ="success">/dessert/accountInfo_customer.jsp</result>
+		</action>
+
+		<action name="accountRecharge_customer" class="RechargeAccountAction">
+			<result name ="success">/dessert/accountRecharge_customer.jsp</result>
+		</action>
+		
+		<action name="addStore" class="AddStoreAction">
+			<result name ="success">/dessert/addStore_systemManager.jsp</result>
+		</action>
+		
+
+		
+		<action name="addClerk" class="AddClerkAction">
+			<result name ="success">/dessert/addClerkSuccess_systemManager.jsp</result>
+		</action>
+		
+		<action name="deleteClerk" class="DeleteClerkAction">
+			<result name ="success">/dessert/deleteClerk_systemManager.jsp</result>
+		</action>
+		
+		<action name="addSalePlan" class="AddPlanAction">
+			<result name ="success">/dessert/makePlan_centerManager.jsp</result>
+		</action>
+		
+		<action name="salePlanDet" class="CheckPlanAction">
+			<result name ="centerManager">/dessert/salePlanDet_centerManager.jsp</result>
+			<result name ="manager">/dessert/salePlanDet_Manager.jsp</result>
+		</action>
+		
+		<action name="passPlan" class="JudgePlanAction" method="passPlan">
+			<result name ="pass">/dessert/checkPlan_manager.jsp</result>
+		</action>
+		
+		<action name="denyPlan" class="JudgePlanAction" method="denyPlan">
+			<result name ="deny">/dessert/checkPlan_manager.jsp</result>
+		</action>
+		
+		<action name="sale" class="SaleAction" method="toInput">
+			<result name ="success">/dessert/saleDet_branchManager.jsp</result>
+		</action>
+		
+		<action name="confirmAction" class="SaleAction" method="inputMessage">
+			<result name ="success">/dessert/saleConfirm_branchManager.jsp</result>
+		</action>
+		
+		<action name="dealAction" class="SaleAction" method="confirm">
+			<result name ="success">/dessert/sale_branchManager.jsp</result>
+		</action>
+		
+		<action name="shopSearch" class="ShoppingAction" method="shoppingSearch">
+			<result name ="success">/dessert/shopSearch_customer.jsp</result>
+		</action>
+		
+				<action name="toInput" class="ShoppingAction" method="toInput">
+			<result name ="success">/dessert/shoppingDet_customer.jsp</result>
+			</action>
+			
+			<action name="toConfirm" class="ShoppingAction" method="toConfirm">
+				<result name ="success">/dessert/shoppingConfirm_customer.jsp</result>
+			</action>
+			
+			<action name="deal" class="ShoppingAction" method="confirm">
+				<result name ="success">/dessert/shopSearch_customer.jsp</result>
+			</action>
+			
+		<action name="pointTrans" class="RechargeAccountAction" method="pointTrans">
+			<result name ="success">/dessert/accountInfo_customer.jsp</result>
+		</action>
+		
+		<action name="dealReserve" class="SaleAction" method="dealReserve">
+			<result name ="success">/dessert/reserveDeal_branchManager.jsp</result>
+		</action>
+		
+				<action name="modifyStore" class="ModifyStoreAction">
+			<result name ="success">/dessert/modifyStore_systemManager.jsp</result>
+		</action>
+		
+				<action name="changeInfo_branch" class="ModifyStoreAction" method="confirmModity"> 
+			<result name ="success">/dessert/modify_systemManager.jsp</result>
+		</action>
+	</package>
+	
+</struts>
+
